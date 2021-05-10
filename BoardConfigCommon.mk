@@ -29,6 +29,3 @@ TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(LOCAL_PATH)/init/init_gte.cpp
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
