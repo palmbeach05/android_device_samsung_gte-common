@@ -16,13 +16,13 @@
 # Inherit from common
 include device/samsung/msm8916-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/gte-common
+DEVICE_PATH := device/samsung/gte-common
 
 # Audio
 USE_QCOM_MIXER_PATHS := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_gte
