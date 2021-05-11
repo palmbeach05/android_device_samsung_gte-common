@@ -29,9 +29,6 @@ DEVICE_PATH := device/samsung/gte-common
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
-# Camera
-PRODUCT_PACKAGES += Camera2
-
 # Ramdisk
 PRODUCT_PACKAGES += \
 	init.target.rc

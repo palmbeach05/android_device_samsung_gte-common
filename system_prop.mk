@@ -1,3 +1,7 @@
+# OpenGLES
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196608
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.snapshot_enabled=1 \
