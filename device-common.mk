@@ -46,7 +46,7 @@ ifneq ($(CM_UPDATER_OTA_URI),)
 	PRODUCT_PROPERTY_OVERRIDES += $(CM_UPDATER_OTA_URI)
 endif
 
-# This is a tablet.
+# Screen density
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := xlarge
 PRODUCT_AAPT_PREF_CONFIG := mdpi
