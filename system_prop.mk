@@ -1,3 +1,7 @@
+# On Screen Navigation
+PRODUCT_PROPERTY_OVERRIDES += \
+	qemu.hw.mainkeys=0
+
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
