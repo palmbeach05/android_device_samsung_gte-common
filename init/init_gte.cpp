@@ -38,6 +38,7 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
+#include "vendor_init.h"
 #include "property_service.h"
 
 #define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
@@ -46,9 +47,6 @@ using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 using android::init::property_set;
-
-namespace android {
-namespace init {
 
 void property_override(char const prop[], char const value[])
 {
@@ -131,6 +129,23 @@ void set_wifi_properties()
     android::init::property_set("ro.radio.noril", "1");
 }
 
+void set_target_properties(const char *device, const char *model)
+{
+	property_override_dual("ro.product.device", "ro.product.vendor.device", device);
+	property_override_dual("ro.product.model", "ro.product.vendor.model", model);
+
+	/* check and/or set fingerprint */
+	set_fingerprint();
+
+	char const *serial_number_file = SERIAL_NUMBER_FILE;
+	std::string serial_number;
+
+	if (ReadFileToString(serial_number_file, &serial_number)) {
+        	serial_number = Trim(serial_number);
+        	property_override("ro.serialno", serial_number.c_str());
+	}
+}
+
 void vendor_load_properties()
 {
 	char *device = NULL;
@@ -171,5 +186,3 @@ void vendor_load_properties()
 	/* set the properties */
 	set_target_properties(device, model);
 }
-}  // namespace init
-} // namespace android
