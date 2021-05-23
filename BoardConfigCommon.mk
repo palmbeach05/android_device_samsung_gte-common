@@ -36,3 +36,6 @@ TARGET_PROVIDES_FM_RADIO := false
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
+
+# SEPolicy
+DEVICE_SEPOLICY_DIRS += device/samsung/gte-common/sepolicy
