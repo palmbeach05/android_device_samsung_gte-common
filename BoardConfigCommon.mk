@@ -13,6 +13,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+# SEPolicy
+CONFIG_GTE_COMMON_SEPOLICY := true
+
 # Inherit from common
 include device/samsung/msm8916-common/BoardConfigCommon.mk
 
@@ -37,6 +40,4 @@ TARGET_PROVIDES_FM_RADIO := false
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-# SEPolicy
-CONFIG_GTE_COMMON_SEPOLICY := true
 DEVICE_SEPOLICY_DIRS += device/samsung/gte-common/sepolicy
