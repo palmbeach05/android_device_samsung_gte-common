@@ -56,9 +56,5 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
-# Offline Charging
-PRODUCT_PACKAGES += \
-    charger_res_images
-    
 # Inhert dalvik heap values from aosp
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
