@@ -13,6 +13,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+# SEPolicy
+CONFIG_GTE_COMMON_SEPOLICY := true
+
 # Inherit from common
 include device/samsung/msm8916-common/BoardConfigCommon.mk
 
@@ -23,6 +26,9 @@ USE_QCOM_MIXER_PATHS := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+
+# Charger
+BOARD_NO_CHARGER_LED := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_gte
@@ -36,7 +42,3 @@ TARGET_PROVIDES_FM_RADIO := false
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
-
-# SEPolicy
-CONFIG_GTE_COMMON_SEPOLICY := true
-DEVICE_SEPOLICY_DIRS += device/samsung/gte-common/sepolicy
